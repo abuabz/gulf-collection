@@ -135,7 +135,7 @@ export default function AboutPage() {
               <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-transparent z-10 group-hover:opacity-70 transition-opacity"></div>
                 <Image
-                  src="/professional-business-owner-portrait-elegant-moder.jpg"
+                  src="/placeholder-user.jpg"
                   alt="SAIDALAVI T"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -159,7 +159,7 @@ export default function AboutPage() {
               <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-transparent z-10 group-hover:opacity-70 transition-opacity"></div>
                 <Image
-                  src="/professional-business-manager-portrait-elegant-mod.jpg"
+                  src="/placeholder-user.jpg"
                   alt="ABDUMANAF V"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
