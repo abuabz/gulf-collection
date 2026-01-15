@@ -21,15 +21,14 @@ export default function ContactPage() {
   }
 
   const businessHours = [
-    { day: "Monday - Friday", hours: "9:00 AM - 9:00 PM" },
-    { day: "Saturday", hours: "9:00 AM - 8:00 PM" },
-    { day: "Sunday", hours: "10:00 AM - 7:00 PM" },
+    { day: "Monday - Saturday", hours: "9:30 AM - 9:30 PM" },
+    { day: "Sunday", hours: "9:30 AM - 09:00 PM" },
   ]
 
   return (
     <main className="w-full">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-20 px-4 bg-gradient-to-b from-secondary to-background">
         <div className="max-w-7xl mx-auto text-center space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground">Contact Us</h1>
           <p className="text-xl text-foreground/70">Get in touch with Gulf Collections</p>
@@ -54,10 +53,10 @@ export default function ContactPage() {
                 <ArrowRight size={16} />
               </a>
               <a
-                href="tel:7592000902"
+                href="tel:7592000903"
                 className="text-accent font-semibold hover:text-accent/80 transition-colors flex items-center gap-2"
               >
-                7592000902
+                7592000903
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -70,8 +69,8 @@ export default function ContactPage() {
             <h3 className="text-xl font-bold text-foreground mb-2">Visit Us</h3>
             <p className="text-foreground/70 mb-4">Two convenient locations</p>
             <p className="text-foreground/80 font-medium">
-              Shop Location 1<br />
-              Shop Location 2
+              Downhill, Malappuram<br />
+              Tirur, Malappuram
             </p>
           </div>
 

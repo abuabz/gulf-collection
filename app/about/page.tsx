@@ -60,7 +60,7 @@ export default function AboutPage() {
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl animate-slide-in-from-bottom-8 group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10 group-hover:opacity-50 transition-opacity"></div>
               <Image
-                src="/modern-electronics-store-showroom-with-smartphones.jpg"
+                src="/shopimage02.avif"
                 alt="Gulf Collections Store"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"

@@ -79,7 +79,6 @@ export default function Home() {
     { name: "Xiaomi", logo: "https://imgs.search.brave.com/QyxUxyGSGRS7fcw8RacRdJVfEQ07lmojxgQgusqyBWg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2FlL1hp/YW9taV9sb2dvXyUy/ODIwMjEtJTI5LnN2/Zy8yNTBweC1YaWFv/bWlfbG9nb18lMjgy/MDIxLSUyOS5zdmcu/cG5n" },
     { name: "Sony", logo: "https://imgs.search.brave.com/krWMCi_fGJmrTMIphAokmwzY8gORIlgrfiZqZoDcx1E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saDYu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL1VL/QWVHWUg0aUs2VWtB/TkQ2X3FjdmVscVVm/M0pzUXRqd0NGX0ZU/OVF1NTdsLVlHUm5x/UmNybGpVRG1YZGhP/Qk5Ga1Jfa29GWDh5/SmNPblVWRjdHVGVn/RnphRjM5VDkwZVNx/Rl9SRXBmd3FsNll2/UU9pLUZjcWpid01K/bGE0ZU5SMkwwSWNt/bXZiWk82c3JQUS1j/cW12Y1lxQVdhYTY2/em9iTmtUbDJjUnlD/UnZRQ3F6MG1Ic3BO/aDFZQXU3T2lwOFcw/V0E5Tlk" },
     { name: "JBL", logo: "https://imgs.search.brave.com/TuoTdsaSDitzsF2ch3KMgt3-T_3t9Qch5YAtGct_G1s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9iL2JjL0pC/TF9sb2dvLnN2Zy8y/NTBweC1KQkxfbG9n/by5zdmcucG5n" },
-    { name: "Canon", logo: "https://imgs.search.brave.com/3o9bXG3E1j6Y1bXwVYp4k1a5jT8W8Z6k2K-1e9yX4mM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y2Fub24uY29tL2Nv/bnRlbnQvdXBsb2Fk/cy9pbWFnZXMvY2Fu/b24tbG9nby1wbi5w/bmc" },
   ]
 
   useEffect(() => {
@@ -305,7 +304,8 @@ export default function Home() {
                 <MapPin size={24} className="text-accent" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Visit Store</h3>
-              <p className="text-foreground/70">Come visit us at our showroom for personalized consultation</p>
+              <p className="text-foreground/70">Downhill, Malappuram</p>
+              <p className="text-foreground/70">Tirur, Malappuram</p>
             </div>
           </div>
 

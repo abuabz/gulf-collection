@@ -43,7 +43,7 @@ export default function ProductsPage() {
   return (
     <main className="w-full">
       {/* Hero Section */}
-      <section className="py-16 md:py-20 px-4 bg-gradient-to-b from-secondary to-background animate-in fade-in duration-1000">
+      <section className="pt-16 md:pt-26 px-4 bg-gradient-to-b from-secondary to-background animate-in fade-in duration-1000">
         <div className="max-w-7xl mx-auto text-center space-y-4">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground text-balance animate-in slide-in-from-top-4">
             Our Products

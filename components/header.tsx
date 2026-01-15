@@ -32,7 +32,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <img src="/logo.png" alt="Logo" className="w-40 object-contain" />
+            <img src="/logo.png" alt="Logo" className="w-30 md:w-40 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,11 +41,10 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 relative ${
-                  isActive(link.href)
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 relative ${isActive(link.href)
                     ? "text-accent bg-accent/10"
                     : "text-foreground/70 hover:text-foreground hover:bg-secondary/50"
-                }`}
+                  }`}
               >
                 {link.label}
                 {isActive(link.href) && (
@@ -86,11 +85,10 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`w-full text-center py-3 px-4 font-semibold rounded-lg transition-all duration-300 ${
-                      isActive(link.href)
+                    className={`w-full text-center py-3 px-4 font-semibold rounded-lg transition-all duration-300 ${isActive(link.href)
                         ? "text-accent text-xl bg-accent/10 scale-105"
                         : "text-foreground/80 text-lg hover:text-accent hover:bg-secondary/50"
-                    }`}
+                      }`}
                     onClick={handleLinkClick}
                     style={{
                       animation: `slideInUp 0.4s ease-out ${index * 0.1}s both`,
