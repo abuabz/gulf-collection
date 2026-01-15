@@ -28,7 +28,7 @@ export default function ContactPage() {
   return (
     <main className="w-full">
       {/* Hero Section */}
-      <section className="pt-20 px-4 bg-gradient-to-b from-secondary to-background">
+      <section className="pt-20 md:pt-26 px-4 bg-gradient-to-b from-secondary to-background">
         <div className="max-w-7xl mx-auto text-center space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground">Contact Us</h1>
           <p className="text-xl text-foreground/70">Get in touch with Gulf Collections</p>
@@ -99,7 +99,8 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-foreground">Our Locations</h2>
             <div className="bg-muted rounded-xl overflow-hidden h-96 border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8162652631256!2d77.62379!3d12.93829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d8c8c8c8c8b%3A0x8c8c8c8c8c8c8c8c!2sGulf%20Collections!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d978.9632100791783!2d76.07076457607226!3d11.04965796828385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64bd2c4ac7385%3A0x7e4e3640f27b8d0c!2sGULF%20COLLECTIONS!5e0!3m2!1sen!2sin!4v1768481903652!5m2!1sen!2sin"
+
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

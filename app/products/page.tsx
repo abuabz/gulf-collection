@@ -79,9 +79,9 @@ export default function ProductsPage() {
                         </li>
                       ))}
                     </ul>
-                    <button className="w-full mt-2 md:mt-4 px-3 md:px-4 py-2 md:py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-all text-sm md:text-base">
+                    {/* <button className="cursor-pointer w-full mt-2 md:mt-4 px-3 md:px-4 py-2 md:py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-all text-sm md:text-base">
                       Learn More
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               )
