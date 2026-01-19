@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, MapPin } from "lucide-react"
 
 export default function Footer() {
@@ -8,7 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Gulf Collections</h3>
+            <h3 className="font-bold text-lg mb-4">
+              <Image src="/logo.png" alt="Gulf Collections Logo" width={200} height={200} />
+            </h3>
             <p className="text-accent-foreground/80 text-sm">A Complete Collections Of Digital Gadgets</p>
           </div>
 

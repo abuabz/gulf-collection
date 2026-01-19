@@ -42,8 +42,8 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 relative ${isActive(link.href)
-                    ? "text-accent bg-accent/10"
-                    : "text-foreground/70 hover:text-foreground hover:bg-secondary/50"
+                  ? "text-accent bg-accent/10"
+                  : "text-foreground/70 hover:text-foreground hover:bg-secondary/50"
                   }`}
               >
                 {link.label}
@@ -55,14 +55,14 @@ export default function Header() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:flex">
+          {/* <div className="hidden md:flex">
             <a
               href="tel:7592000905"
               className="px-6 py-2 bg-gradient-to-r from-accent to-accent/80 text-accent-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-accent/50 transition-all duration-300 transform hover:scale-105"
             >
               Call Now
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -86,8 +86,8 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     className={`w-full text-center py-3 px-4 font-semibold rounded-lg transition-all duration-300 ${isActive(link.href)
-                        ? "text-accent text-xl bg-accent/10 scale-105"
-                        : "text-foreground/80 text-lg hover:text-accent hover:bg-secondary/50"
+                      ? "text-accent text-xl bg-accent/10 scale-105"
+                      : "text-foreground/80 text-lg hover:text-accent hover:bg-secondary/50"
                       }`}
                     onClick={handleLinkClick}
                     style={{

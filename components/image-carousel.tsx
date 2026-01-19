@@ -27,6 +27,12 @@ export default function ImageCarousel() {
       mobileUrl: "/gadgets-vertical-mobile.jpg",
       alt: "Latest Gadgets & Devices",
     },
+    {
+      id: 3,
+      desktopUrl: "/modern-electronics-store-showroom-with-smartphones.jpg",
+      mobileUrl: "/electronics-mobile-vertical.jpg", // Reusing this for mobile as it's a good fit
+      alt: "Expert Digital Services",
+    },
   ]
 
   useEffect(() => {
@@ -56,9 +62,8 @@ export default function ImageCarousel() {
           {images.map((image, index) => (
             <div
               key={image.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
             >
               <img
                 src={isMobile ? image.mobileUrl : image.desktopUrl}
@@ -66,7 +71,7 @@ export default function ImageCarousel() {
                 className="w-full h-full object-cover"
               />
               {/* Gradient overlay for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/30"></div>
+              <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background/30"></div>
             </div>
           ))}
         </div>
@@ -95,9 +100,8 @@ export default function ImageCarousel() {
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${
-                index === currentSlide ? "bg-accent w-6 md:w-8" : "bg-accent/40 hover:bg-accent/60"
-              }`}
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all ${index === currentSlide ? "bg-accent w-6 md:w-8" : "bg-accent/40 hover:bg-accent/60"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

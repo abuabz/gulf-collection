@@ -10,7 +10,7 @@ export default function AboutPage() {
       <section className="py-20 px-4 bg-gradient-to-br from-secondary via-background to-secondary">
         <div className="max-w-7xl mx-auto text-center space-y-8">
           <div className="flex justify-center mb-6 animate-fade-in">
-            <div className="w-32 h-32 relative">
+            {/* <div className="w-32 h-32 relative">
               <Image
                 src="/logo.png"
                 alt="Gulf Collections Logo"
@@ -18,10 +18,10 @@ export default function AboutPage() {
                 height={128}
                 className="w-full h-full object-contain"
               />
-            </div>
+            </div> */}
           </div>
           <div className="space-y-4 animate-slide-in-from-top-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground">About Gulf Collections</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground">About Gulf Collections</h1>
             <p className="text-xl md:text-2xl text-accent font-semibold">Leading Electronics Retailer Since 2010</p>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               Your trusted partner for authentic smartphones, computers, and accessories
@@ -31,19 +31,19 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Story - Left Text Right Image */}
-      <section className="py-24 px-4 bg-background">
+      <section className="py-2 md:py-24 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-slide-in-from-bottom-8" style={{ animationDelay: "0.1s" }}>
               <h2 className="text-5xl font-bold text-foreground">Our Story</h2>
               <div className="space-y-4">
                 <p className="text-lg text-foreground/70 leading-relaxed">
-                  Gulf Collections was born from a passion to deliver excellence in the electronics retail industry.
-                  Founded in 2010, we've grown into a trusted name serving thousands of satisfied customers.
+                  Our organization has been serving the mobile industry with trust and quality for over 25 years. Founded by Saidalavi, the company was established with a clear vision to provide reliable products and excellent customer service.
+                  Over the years, our mobile shop has built a strong reputation in the market by offering the latest mobile phones, accessories, and dependable after-sales support.
                 </p>
                 <p className="text-lg text-foreground/70 leading-relaxed">
-                  Our commitment to authenticity, quality, and customer satisfaction has made us the go-to destination
-                  for smartphones, computers, and premium accessories in the region.
+                  Customer satisfaction, experience, and integrity have always been the foundation of our success.
+                  Even today, we continue to grow by adapting to new technologies and market trends, while always placing our customers at the center of everything we do.
                 </p>
                 <div className="pt-4 space-y-3">
                   <div className="flex items-center gap-3 text-accent">
@@ -60,7 +60,7 @@ export default function AboutPage() {
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl animate-slide-in-from-bottom-8 group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10 group-hover:opacity-50 transition-opacity"></div>
               <Image
-                src="/shopimage02.avif"
+                src="/shopnew02.jpeg"
                 alt="Gulf Collections Store"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -71,9 +71,9 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-24 px-4 bg-secondary">
+      <section className="py-10 md:py-24 px-4 bg-secondary">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-16 text-foreground">Vision & Mission</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">Vision & Mission</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Vision */}
             <div className="group relative">
@@ -89,8 +89,7 @@ export default function AboutPage() {
                   <h3 className="text-3xl font-bold text-foreground">Our Vision</h3>
                 </div>
                 <p className="text-lg text-foreground/70 leading-relaxed">
-                  To be the most trusted and preferred electronics retailer in the Gulf region, known for exceptional
-                  quality, authentic products, and unmatched customer service.
+                  We aim to build long-term relationships with our customers through honesty, reliability, and innovation, while continuously adapting to evolving technology and market needs. Our focus is not just on selling Products , but on creating value, trust, and satisfaction for every customer we serve
                 </p>
               </div>
             </div>
@@ -109,8 +108,7 @@ export default function AboutPage() {
                   <h3 className="text-3xl font-bold text-foreground">Our Mission</h3>
                 </div>
                 <p className="text-lg text-foreground/70 leading-relaxed">
-                  To provide our customers with authentic, high-quality electronics at competitive prices, backed by
-                  expert consultation and reliable after-sales support.
+                  We are committed to delivering a seamless and satisfying customer experience through knowledgeable staff, honest guidance, and continuous improvement. By staying updated with the latest technology and market trends, we strive to meet the evolving needs of our customers while maintaining the trust we have built over more than 25 years.
                 </p>
               </div>
             </div>
@@ -119,44 +117,35 @@ export default function AboutPage() {
       </section>
 
       {/* Meet Our Owners */}
-      <section className="py-24 px-4 bg-background">
+      <section className="py-10 md:py-24 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-foreground mb-4">Meet Our Founders</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Meet Our Founders</h2>
             <p className="text-xl text-foreground/70">Visionary leaders building Gulf Collections</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-12 max-w-4xl mx-auto">
             {/* Owner 1 */}
-            <div
+            {/* <div
               className="group text-center space-y-6 animate-slide-in-from-bottom-8"
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-transparent z-10 group-hover:opacity-70 transition-opacity"></div>
-                <Image
-                  src="/placeholder-user.jpg"
-                  alt="SAIDALAVI T"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+
               <div className="space-y-3">
                 <h3 className="text-3xl font-bold text-foreground">SAIDALAVI T</h3>
                 <p className="text-accent text-lg font-semibold">Founder & Chairman</p>
                 <p className="text-foreground/70 leading-relaxed">
-                  Visionary entrepreneur with 15+ years of expertise in electronics retail. Founded Gulf Collections
-                  with a commitment to quality and customer satisfaction.
+                  Gulf Collections was built on trust and honest service. This belief has guided us for over 25 years and continues to shape how we serve our customers every day
                 </p>
               </div>
-            </div>
+            </div> */}
 
             {/* Owner 2 */}
             <div
               className="group text-center space-y-6 animate-slide-in-from-bottom-8"
               style={{ animationDelay: "0.3s" }}
             >
-              <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
+              {/* <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-transparent z-10 group-hover:opacity-70 transition-opacity"></div>
                 <Image
                   src="/placeholder-user.jpg"
@@ -164,13 +153,12 @@ export default function AboutPage() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-3xl font-bold text-foreground">ABDUMANAF V</h3>
-                <p className="text-accent text-lg font-semibold">Co-Founder & Managing Director</p>
-                <p className="text-foreground/70 leading-relaxed">
-                  Strategic leader focused on operations and growth. Brings extensive experience in business management
-                  and supply chain excellence to Gulf Collections.
+              </div> */}
+              <div className="space-y-3 justify-items-center">
+                <h3 className="text-xl md:text-3xl font-bold text-foreground">ABDUMANAF V <span className="text-accent opacity-60 px-3">|</span> SAIDALAVI T</h3>
+                <p className="text-accent text-lg font-semibold">Founders</p>
+                <p className="text-foreground/70 text-center leading-relaxed max-w-[500px]">
+                  Gulf Collections was built on trust and honest service. This belief has guided us for over 25 years and continues to shape how we serve our customers every day
                 </p>
               </div>
             </div>
@@ -206,9 +194,9 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="py-24 px-4 bg-gradient-to-br from-accent/5 via-background to-accent/5">
+      <section className="py-2 md:py-24 px-4 bg-gradient-to-br from-accent/5 via-background to-accent/5">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-16 text-foreground">Our Core Values</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-foreground">Our Core Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {

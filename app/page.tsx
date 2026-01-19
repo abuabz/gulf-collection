@@ -16,6 +16,8 @@ import {
   Shield,
   Zap,
   Clock,
+  ChartBar,
+  MessageCircleIcon,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 import ImageCarousel from "@/components/image-carousel"
@@ -23,7 +25,12 @@ import ImageCarousel from "@/components/image-carousel"
 export default function Home() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [formSubmitted, setFormSubmitted] = useState(false)
-  const [backgroundImage, setBackgroundImage] = useState("url('/shopimage.webp')")
+  const heroImages = [
+    "url('/shopnew01.jpeg')",
+    "url('/shopnew02.jpeg')",
+    "url('/shopnew03.jpeg')"
+  ]
+  const [backgroundImage, setBackgroundImage] = useState(heroImages[0])
   const [fade, setFade] = useState(false)
 
   const categories = [
@@ -73,27 +80,44 @@ export default function Home() {
   ]
 
   const brands = [
-    { name: "Apple", logo: "https://imgs.search.brave.com/q1wrujWOTPG5DYL_X7H4YSQz3JRtdmFd1D_8T0vNOwk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9mL2ZhL0Fw/cGxlX2xvZ29fYmxh/Y2suc3ZnLzI1MHB4/LUFwcGxlX2xvZ29f/YmxhY2suc3ZnLnBu/Zw" },
-    { name: "Samsung", logo: "https://imgs.search.brave.com/wmrGTtwSYGPhPmP-omzWsXOkNYsBc5K9ghtJdSHN3dU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc2Vla2xvZ28u/Y29tL2xvZ28tcG5n/LzM3LzIvc2Ftc3Vu/Zy1sb2dvLXBuZ19z/ZWVrbG9nby0zNzAz/NTYucG5n" },
-    { name: "OnePlus", logo: "https://imgs.search.brave.com/IoRznY5sTWOq0I0R1lsN_pVCm8dXPyBXJdyArBe3LcQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvcHJl/dmlld3MvMDY4Lzc2/NC8yNDUvbm9uXzJ4/L29uZXBsdXMtbG9n/by1tb2JpbGUtY29t/cGFueS1icmFuZC1v/ZmZpY2lhbC1pY29u/LXRyYW5zcGFyZW50/LWJhY2tncm91bmQt/ZnJlZS1wbmcucG5n" },
-    { name: "Xiaomi", logo: "https://imgs.search.brave.com/QyxUxyGSGRS7fcw8RacRdJVfEQ07lmojxgQgusqyBWg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9hL2FlL1hp/YW9taV9sb2dvXyUy/ODIwMjEtJTI5LnN2/Zy8yNTBweC1YaWFv/bWlfbG9nb18lMjgy/MDIxLSUyOS5zdmcu/cG5n" },
-    { name: "Sony", logo: "https://imgs.search.brave.com/krWMCi_fGJmrTMIphAokmwzY8gORIlgrfiZqZoDcx1E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saDYu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL1VL/QWVHWUg0aUs2VWtB/TkQ2X3FjdmVscVVm/M0pzUXRqd0NGX0ZU/OVF1NTdsLVlHUm5x/UmNybGpVRG1YZGhP/Qk5Ga1Jfa29GWDh5/SmNPblVWRjdHVGVn/RnphRjM5VDkwZVNx/Rl9SRXBmd3FsNll2/UU9pLUZjcWpid01K/bGE0ZU5SMkwwSWNt/bXZiWk82c3JQUS1j/cW12Y1lxQVdhYTY2/em9iTmtUbDJjUnlD/UnZRQ3F6MG1Ic3BO/aDFZQXU3T2lwOFcw/V0E5Tlk" },
-    { name: "JBL", logo: "https://imgs.search.brave.com/TuoTdsaSDitzsF2ch3KMgt3-T_3t9Qch5YAtGct_G1s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9iL2JjL0pC/TF9sb2dvLnN2Zy8y/NTBweC1KQkxfbG9n/by5zdmcucG5n" },
+    { name: "Apple", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/250px-Apple_logo_black.svg.png" },
+    { name: "Samsung", logo: "https://images.samsung.com/is/image/samsung/assets/in/about-us/brand/logo/mo/360_197_1.png?$720_N_PNG$" },
+    { name: "Oppo", logo: "https://i.pinimg.com/736x/eb/e5/42/ebe542236f9dc911005c816d004930eb.jpg" },
+    { name: "Vivo", logo: "https://static.vecteezy.com/system/resources/previews/020/927/602/non_2x/vivo-brand-logo-phone-symbol-name-black-design-chinese-mobile-illustration-free-vector.jpg" },
+    { name: "Xiaomi", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/250px-Xiaomi_logo_%282021-%29.svg.png" },
+    { name: "Nothing", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Nothing_Logo.webp/1280px-Nothing_Logo.webp.png" },
+    { name: "Motorola", logo: "https://1000logos.net/wp-content/uploads/2017/04/Motorola-Logo.png" },
+    { name: "Belkin", logo: "https://1000logos.net/wp-content/uploads/2020/09/Belkin-Logo.png" },
+    { name: "JBL", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/JBL_logo.svg/250px-JBL_logo.svg.png" },
+    { name: "Boat", logo: "https://i.pinimg.com/736x/08/16/15/081615c30f30318974ce916da17b88e3.jpg" },
+    { name: "Philips", logo: "https://images.seeklogo.com/logo-png/10/2/philips-logo-png_seeklogo-108446.png" },
+    { name: "Zebronics", logo: "https://cdn.shopify.com/s/files/1/0356/9850/7909/files/zebronicx-logo-black.jpg?v=1611393272" },
+    { name: "HP", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/250px-HP_logo_2012.svg.png" },
+    { name: "Lenovo", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/2560px-Lenovo_logo_2015.svg.png" },
+    { name: "Dell", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/2560px-Dell_logo_2016.svg.png" },
+    { name: "Asus", logo: "https://static.vecteezy.com/system/resources/previews/019/136/445/non_2x/asus-logo-asus-icon-free-free-vector.jpg" },
+    { name: "MSI", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF-l0uZ3qvAB-DMRWqlnUkyQuhrWIjPCnApg&s" },
+    { name: "Logitech", logo: "https://1000logos.net/wp-content/uploads/2020/05/Logitech-logo.jpg" },
+    { name: "Fingers", logo: "https://www.computerwale.in/wp-content/uploads/2025/02/fingers-logo.png" },
+    { name: "Ant Esports", logo: "https://yt3.googleusercontent.com/ytc/AIdro_ncUU98odLXAA8AswKMrArl5VXG2jD7KhAgPK2zAxAUFQ=s900-c-k-c0x00ffffff-no-rj" },
+    { name: "Gadpro", logo: "https://gadpro.in/wp-content/uploads/2023/11/gad-pro-logo.svg" }, // Using placeholder as Gadpro specific logo is rare
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setFade(true)
       setTimeout(() => {
-        setBackgroundImage((prev) =>
-          prev === "url('/shopimage.webp')" ? "url('/shopimage02.avif')" : "url('/shopimage.webp')"
-        )
+        setBackgroundImage((prev) => {
+          const currentIndex = heroImages.indexOf(prev)
+          const nextIndex = (currentIndex + 1) % heroImages.length
+          return heroImages[nextIndex]
+        })
         setFade(false)
       }, 500) // Duration of fade effect (500ms)
     }, 5000) // Change every 5 seconds
 
     return () => clearInterval(interval) // Cleanup interval on component unmount
-  }, [])
+  }, [heroImages])
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -151,10 +175,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <a
-              href="tel:7592000905"
+              href="https://wa.me/917592000905"
               className="px-8 py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/50 inline-flex items-center justify-center gap-2 animate-pulse-glow"
             >
-              Call Now
+              Chat Now
               <ArrowRight size={20} />
             </a>
             <Link
@@ -204,32 +228,37 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-secondary relative overflow-hidden">
+      <section className="py-20 bg-secondary relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl animate-float"></div>
         </div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-foreground text-balance">
+        <div className="max-w-[100vw] relative z-10 overflow-hidden">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-foreground text-balance px-4">
             Our Brands & Accessories
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-6 gap-6 md:gap-8">
-            {brands.map((brand, index) => (
-              <div
-                key={brand.name}
-                className="group relative overflow-hidden rounded-xl aspect-square bg-card border border-border hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 animate-in fade-in slide-in-from-bottom-8 cursor-pointer"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/10 to-accent/5 group-hover:from-accent/20 group-hover:to-accent/10 transition-all">
-                  <span className="text-6xl md:text-7xl group-hover:scale-110 transition-transform duration-300">
-                    <img src={brand.logo} alt={brand.name} className="w-16 h-16 md:w-20 md:h-20 object-contain" />
-                  </span>
-                </div>
 
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-foreground/90 to-foreground/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-accent-foreground font-bold text-xl text-center px-4">{brand.name}</span>
+          <div className="relative flex overflow-hidden pause-on-hover">
+            <div className="flex animate-marquee whitespace-nowrap py-12">
+              {[...brands, ...brands].map((brand, index) => (
+                <div
+                  key={`${brand.name}-${index}`}
+                  className="mx-4 md:mx-8 flex flex-col items-center justify-center group"
+                >
+                  <div className="relative w-24 h-24 md:w-24 md:h-24 rounded-2xl bg-card border border-border group-hover:border-accent transition-all duration-300 flex items-center justify-center p-6 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-2">
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-foreground/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                      <span className="text-accent-foreground font-bold text-sm md:text-base text-center px-2">
+                        {brand.name}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -281,10 +310,10 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border border-border hover:border-accent/50 transition-all">
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                <Phone size={24} className="text-accent" />
+                <MessageCircleIcon size={24} className="text-accent" />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
-              <a href="tel:7592000905" className="text-accent hover:text-accent/90 font-semibold">
+              <h3 className="font-semibold text-foreground mb-2">Chat Us</h3>
+              <a href="https://wa.me/917592000905" className="text-accent hover:text-accent/90 font-semibold">
                 +91 759-2000-901
               </a>
             </div>
