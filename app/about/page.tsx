@@ -47,11 +47,11 @@ export default function AboutPage() {
                 </p>
                 <div className="pt-4 space-y-3">
                   <div className="flex items-center gap-3 text-accent">
-                    <span className="text-2xl font-bold">15+</span>
+                    <span className="text-2xl font-bold">25+</span>
                     <span className="text-foreground/70">Years of Excellence</span>
                   </div>
                   <div className="flex items-center gap-3 text-accent">
-                    <span className="text-2xl font-bold">10K+</span>
+                    <span className="text-2xl font-bold">5M+</span>
                     <span className="text-foreground/70">Happy Customers</span>
                   </div>
                 </div>

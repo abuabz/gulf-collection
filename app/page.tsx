@@ -299,7 +299,7 @@ export default function Home() {
           ></div>
           <div className="absolute top-1/2 right-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-bounce-subtle"></div>
         </div>
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground text-balance">
             Get In Touch With Us
           </h2>
@@ -307,14 +307,14 @@ export default function Home() {
             Have questions? We would love to hear from you. Send us a message!
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border border-border hover:border-accent/50 transition-all">
               <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
                 <MessageCircleIcon size={24} className="text-accent" />
               </div>
               <h3 className="font-semibold text-foreground mb-2">Chat Us</h3>
               <a href="https://wa.me/917592000905" className="text-accent hover:text-accent/90 font-semibold">
-                +91 759-2000-901
+                +91 759-2000-905
               </a>
             </div>
 
@@ -327,15 +327,27 @@ export default function Home() {
                 suppport@gulfcollections.in
               </a>
             </div>
-
-            <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg border border-border hover:border-accent/50 transition-all">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                <MapPin size={24} className="text-accent" />
+            <Link href="https://maps.app.goo.gl/s7YdLg4M7U19YGin8" target="_blank">
+              <div className="flex flex-col items-center text-center p-4 bg-card rounded-lg border border-border hover:border-accent/50 transition-all">
+                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <MapPin size={24} className="text-accent" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">Downhill, Malappuram</h3>
+                <p className="text-sm">Town Square building,Calicut Road</p>
+                <p className="text-sm">Kizhakkethala,Malappuram</p>
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Visit Store</h3>
-              <p className="text-foreground/70">Downhill, Malappuram</p>
-              <p className="text-foreground/70">Tirur, Malappuram</p>
-            </div>
+            </Link>
+            <Link href="https://maps.app.goo.gl/SGxw4vGPDaMQtjtYA" target="_blank">
+              <div className="flex flex-col items-center text-center p-4 bg-card rounded-lg border border-border hover:border-accent/50 transition-all">
+                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <MapPin size={24} className="text-accent" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">Downhill,Kottappadi</h3>
+                <p className="text-sm">Naduthodi Tower ,Tirur Road</p>
+                <p className="text-sm">Kottappadi,Malappuram</p>
+              </div>
+            </Link>
+
           </div>
 
           <form
