@@ -97,11 +97,10 @@ export default function ContactPage() {
           {/* Maps */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-foreground">Our Locations</h2>
-            <div className="bg-muted rounded-xl overflow-hidden h-96 border border-border">
+            <div className="bg-muted rounded-xl overflow-hidden h-96 border border-border relative">
               <iframe
-                src="https://www.google.com/maps/d/u/0/embed?mid=1pjtRlwLS3PWH8F0WldxBCDPXPjwn33s&ehbc=2E312F&noprof=1&ehbc=somehex_if_present"  // ← paste the full src from My Maps here
-                width="100%"
-                height="100%"
+                src="https://www.google.com/maps/d/u/0/embed?mid=1pjtRlwLS3PWH8F0WldxBCDPXPjwn33s&ehbc=2E312F&noprof=1&ehbc=somehex_if_present"
+                className="w-full h-[calc(100%+60px)] -mt-[60px]"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
