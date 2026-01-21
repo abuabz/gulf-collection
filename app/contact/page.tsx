@@ -46,17 +46,17 @@ export default function ContactPage() {
             <p className="text-foreground/70 mb-4">Reach out for immediate assistance</p>
             <div className="space-y-2">
               <a
-                href="tel:7592000905"
+                href="tel:7592000901"
                 className="text-accent font-semibold hover:text-accent/80 transition-colors flex items-center gap-2"
               >
-                7592000905
+                <span className="text-foreground/70">Kottappadi Branch</span> 7592000901
                 <ArrowRight size={16} />
               </a>
               <a
-                href="tel:7592000903"
+                href="tel:7592000902"
                 className="text-accent font-semibold hover:text-accent/80 transition-colors flex items-center gap-2"
               >
-                7592000903
+                <span className="text-foreground/70">Kizhakkethala Branch</span> 7592000902
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -70,7 +70,7 @@ export default function ContactPage() {
             <p className="text-foreground/70 mb-4">Two convenient locations</p>
             <p className="text-foreground/80 font-medium">
               Downhill, Malappuram<br />
-              Tirur, Malappuram
+              Downhill,Kottappadi
             </p>
           </div>
 
@@ -99,8 +99,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-foreground">Our Locations</h2>
             <div className="bg-muted rounded-xl overflow-hidden h-96 border border-border">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d978.9632100791783!2d76.07076457607226!3d11.04965796828385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba64bd2c4ac7385%3A0x7e4e3640f27b8d0c!2sGULF%20COLLECTIONS!5e0!3m2!1sen!2sin!4v1768481903652!5m2!1sen!2sin"
-
+                src="https://www.google.com/maps/d/u/0/embed?mid=1pjtRlwLS3PWH8F0WldxBCDPXPjwn33s&ehbc=2E312F&noprof=1&ehbc=somehex_if_present"  // ← paste the full src from My Maps here
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

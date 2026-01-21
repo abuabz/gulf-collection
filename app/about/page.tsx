@@ -2,12 +2,13 @@
 
 import { Users, Target, Lightbulb, Mail, Phone } from "lucide-react"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
 export default function AboutPage() {
   return (
     <main className="w-full bg-background overflow-hidden">
       {/* Hero Section with Logo */}
-      <section className="py-20 px-4 bg-gradient-to-br from-secondary via-background to-secondary">
+      <section className="pt-20 pb-12 px-4 bg-gradient-to-br from-secondary via-background to-secondary">
         <div className="max-w-7xl mx-auto text-center space-y-8">
           <div className="flex justify-center mb-6 animate-fade-in">
             {/* <div className="w-32 h-32 relative">
@@ -31,41 +32,79 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Story - Left Text Right Image */}
+      {/* Brand Story - Image Collage Left, Text Card Right */}
       <section className="py-2 md:py-24 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-slide-in-from-bottom-8" style={{ animationDelay: "0.1s" }}>
-              <h2 className="text-5xl font-bold text-foreground">Our Story</h2>
-              <div className="space-y-4">
-                <p className="text-lg text-foreground/70 leading-relaxed">
-                  Our organization has been serving the mobile industry with trust and quality for over 25 years. Founded by Saidalavi, the company was established with a clear vision to provide reliable products and excellent customer service.
-                  Over the years, our mobile shop has built a strong reputation in the market by offering the latest mobile phones, accessories, and dependable after-sales support.
-                </p>
-                <p className="text-lg text-foreground/70 leading-relaxed">
-                  Customer satisfaction, experience, and integrity have always been the foundation of our success.
-                  Even today, we continue to grow by adapting to new technologies and market trends, while always placing our customers at the center of everything we do.
-                </p>
-                <div className="pt-4 space-y-3">
-                  <div className="flex items-center gap-3 text-accent">
-                    <span className="text-2xl font-bold">25+</span>
-                    <span className="text-foreground/70">Years of Excellence</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-accent">
-                    <span className="text-2xl font-bold">5M+</span>
-                    <span className="text-foreground/70">Happy Customers</span>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column: Image Collage */}
+            <div className="grid grid-cols-2 gap-4 md:h-[500px] h-[300px] animate-slide-in-from-left-8">
+              {/* Tall Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10 group-hover:opacity-50 transition-opacity"></div>
+                <Image
+                  src="/shopnew02.jpeg"
+                  alt="Gulf Collections Store"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Right Side Stack */}
+              <div className="grid grid-rows-2 gap-4">
+                {/* Top Small Image */}
+                <div className="relative rounded-2xl overflow-hidden shadow-xl group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10 group-hover:opacity-50 transition-opacity"></div>
+                  <Image
+                    src="/shopnew01.jpeg"
+                    alt="Store Interior"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Bottom Stats Box */}
+                <div className="bg-[#1a1a1a] rounded-2xl p-6 flex flex-col justify-center items-center text-center text-white shadow-xl hover:bg-black transition-colors duration-300">
+                  <span className="text-2xl md:text-4xl font-bold text-accent ">25+</span>
+                  <span className="text-xs md:text-base font-medium opacity-90 mb-2 md:mb-6">Years of Experience</span>
+                  <span className="text-2xl md:text-4xl font-bold text-accent ">5M+</span>
+                  <span className="text-xs md:text-base font-medium opacity-90">Happy Customers</span>
                 </div>
               </div>
             </div>
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl animate-slide-in-from-bottom-8 group">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10 group-hover:opacity-50 transition-opacity"></div>
-              <Image
-                src="/shopnew02.jpeg"
-                alt="Gulf Collections Store"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+
+            {/* Right Column: Content Card */}
+            <div className="bg-secondary/30 rounded-3xl p-4 md:p-12 animate-slide-in-from-right-8 space-y-6">
+              <div className="space-y-2">
+                <span className="text-accent font-bold tracking-wider text-sm uppercase">About Gulf Collections</span>
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground">Innovative Strategies for Your Digital Life</h2>
+              </div>
+
+              <div className="space-y-4 text-foreground/70 text-lg leading-relaxed">
+                <p>
+                  Our organization has been serving the mobile industry with trust and quality for over 25 years. Founded by Saidalavi, we established a clear vision to provide reliable products and excellent customer service.
+                </p>
+                <p>
+                  Customer satisfaction, experience, and integrity have always been the foundation of our success. We continue to grow by adapting to new technologies while placing you at the center of everything we do.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4">
+                {[
+                  "Authentic Products",
+                  "Expert Guidance",
+                  "Reliable Support",
+                  "Trusted Service"
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-accent flex items-center justify-center">
+                      <span className="text-white text-xs">✓</span>
+                    </div>
+                    <span className="text-foreground/80 font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
+
           </div>
         </div>
       </section>
