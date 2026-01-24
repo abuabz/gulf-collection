@@ -18,6 +18,8 @@ import {
   Clock,
   ChartBar,
   MessageCircleIcon,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 import ImageCarousel from "@/components/image-carousel"
@@ -30,8 +32,17 @@ export default function Home() {
     "url('/shopnew02.jpeg')",
     "url('/shopnew03.jpeg')"
   ]
-  const [backgroundImage, setBackgroundImage] = useState(heroImages[0])
-  const [fade, setFade] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [heroImages.length])
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
 
   const categories = [
     {
@@ -103,21 +114,7 @@ export default function Home() {
     { name: "Gadpro", logo: "https://gadpro.in/wp-content/uploads/2023/11/gad-pro-logo.svg" }, // Using placeholder as Gadpro specific logo is rare
   ]
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(true)
-      setTimeout(() => {
-        setBackgroundImage((prev) => {
-          const currentIndex = heroImages.indexOf(prev)
-          const nextIndex = (currentIndex + 1) % heroImages.length
-          return heroImages[nextIndex]
-        })
-        setFade(false)
-      }, 500) // Duration of fade effect (500ms)
-    }, 5000) // Change every 5 seconds
 
-    return () => clearInterval(interval) // Cleanup interval on component unmount
-  }, [heroImages])
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -140,54 +137,53 @@ export default function Home() {
   return (
     <main className="w-full">
       {/* Hero Section with Animated Background */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden bg-gradient-to-br from-background via-secondary to-background">
-        <div
-          className={`absolute inset-0 transition-opacity duration-1500 ${fade ? "opacity-0 " : "opacity-30"}`}
-          style={{
-            backgroundImage: backgroundImage,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        ></div>
-
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float"></div>
-          <div
-            className="absolute bottom-20 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/3 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-bounce-subtle"
-            style={{ animationDelay: "0.5s" }}
-          ></div>
+      {/* Hero Section with Carousel */}
+      <section className="relative  h-screen md:h-[98vh] flex items-end justify-end overflow-hidden md:m-2 m-0">
+        {/* Carousel Background */}
+        <div className="absolute inset-0 w-full h-full">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: image }}
+              />
+              <div className="absolute inset-0 bg-black/10" />
+            </div>
+          ))}
         </div>
 
-        <div className="relative max-w-4xl mx-auto text-center space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000 z-10">
-          <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4 animate-slide-in-right">
-            <span className="text-accent font-semibold text-sm">Welcome to Gulf Collections</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground tracking-tight text-balance">
-            The Complete Digital Store
-          </h1>
-          <p className="text-xl md:text-2xl text-foreground/70 text-balance">
-            A Complete Collection Of Premium Digital Gadgets & Expert Services
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <a
-              href="https://wa.me/917592000905"
-              className="px-8 py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/50 inline-flex items-center justify-center gap-2 animate-pulse-glow"
-            >
-              Chat Now
-              <ArrowRight size={20} />
-            </a>
-            <Link
-              href="/products"
-              className="px-8 py-4 border-2 border-accent text-accent rounded-lg font-semibold hover:bg-accent/10 transition-all inline-flex items-center justify-center gap-2"
-            >
-              Explore Products
-              <ArrowRight size={20} />
-            </Link>
+        {/* Navigation Controls */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/20 hover:bg-background/40 backdrop-blur-sm text-white rounded-full transition-all"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={32} />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/20 hover:bg-background/40 backdrop-blur-sm text-white rounded-full transition-all"
+          aria-label="Next slide"
+        >
+          <ChevronRight size={32} />
+        </button>
+
+        {/* Content Box */}
+        <div className="relative z-10 p-4 md:p-4 md:mr-10 mb-10 md:mb-10 max-w-xl">
+          <div className="bg-background/70 liquid-glass border-white border-2 backdrop-blur-md p-6 md:p-6 rounded-3xl shadow-2xl border border-white/20 animate-in fade-in slide-in-from-right duration-1000">
+            <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-1 md:mb-4 animate-slide-in-right">
+              <span className="text-accent font-semibold text-sm">Welcome to Gulf Collections</span>
+            </div>
+            <h1 className="text-xl md:text-3xl font-bold text-foreground tracking-tight text-balance mb-1 md:mb-4">
+              The Complete Digital Store
+            </h1>
+            <p className="text-sm md:text-md text-foreground/70 text-balance">
+              A Complete Collection Of Premium Digital Gadgets & Expert Services
+            </p>
           </div>
         </div>
       </section>
