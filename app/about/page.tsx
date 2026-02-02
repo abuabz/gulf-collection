@@ -55,7 +55,7 @@ export default function AboutPage() {
                 <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent/5 z-10 group-hover:opacity-50 transition-opacity"></div>
                   <Image
-                    src="/shopnew01.jpeg"
+                    src="/shop2.jpeg"
                     alt="Store Interior"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
