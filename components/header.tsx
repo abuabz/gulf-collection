@@ -19,7 +19,7 @@ export default function Header() {
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
     { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Contact Us" },
   ]
 
   const handleLinkClick = () => {
