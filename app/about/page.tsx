@@ -23,7 +23,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-4 animate-slide-in-from-top-4">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground">About Gulf Collections</h1>
-            <p className="text-xl md:text-2xl text-accent font-semibold">Leading Electronics Retailer Since 2010</p>
+            <p className="text-xl md:text-2xl text-accent font-semibold">Leading Electronics Retailer Since 2000</p>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               Your trusted partner for authentic smartphones, computers, and accessories
             </p>
