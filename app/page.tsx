@@ -189,11 +189,11 @@ export default function Home() {
         </div> */}
       </section>
 
-      <section className="py-12 md:py-20 px-4 bg-background relative">
+      {/* <section className="py-12 md:py-20 px-4 bg-background relative">
         <div className="max-w-6xl mx-auto">
           <ImageCarousel />
         </div>
-      </section>
+      </section> */}
 
       {/* Products Showcase Section */}
       <section className="py-16 md:py-20 px-4 bg-background relative">
