@@ -174,7 +174,7 @@ export default function Home() {
         </button>
 
         {/* Content Box */}
-        <div className="relative z-10 p-4 md:p-4 md:mr-10 mb-10 md:mb-10 max-w-xl">
+        {/* <div className="relative z-10 p-4 md:p-4 md:mr-10 mb-10 md:mb-10 max-w-xl">
           <div className="bg-background/70 liquid-glass border-white border-2 backdrop-blur-md p-6 md:p-6 rounded-3xl shadow-2xl border border-white/20 animate-in fade-in slide-in-from-right duration-1000">
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-1 md:mb-4 animate-slide-in-right">
               <span className="text-accent font-semibold text-sm">Welcome to Gulf Collections</span>
@@ -186,7 +186,7 @@ export default function Home() {
               A Complete Collection Of Premium Digital Gadgets & Expert Services
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section className="py-12 md:py-20 px-4 bg-background relative">
