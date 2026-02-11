@@ -28,9 +28,10 @@ export default function Home() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [formSubmitted, setFormSubmitted] = useState(false)
   const heroImages = [
-    "url('/shopnew01.jpeg')",
-    "url('/shopnew02.jpeg')",
-    "url('/shopnew03.jpeg')"
+    "url('/assets/WEBSITE LANDING 1.jpg')",
+    "url('/assets/WEBSITE LANDING 2.jpg')",
+    "url('/assets/WEBSITE LANDING 3.jpg')"
+
   ]
   const [currentSlide, setCurrentSlide] = useState(0)
 
