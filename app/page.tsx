@@ -139,7 +139,7 @@ export default function Home() {
     <main className="w-full">
       {/* Hero Section with Animated Background */}
       {/* Hero Section with Carousel */}
-      <section className="relative  h-screen md:h-[98vh] flex items-end justify-end overflow-hidden md:m-2 m-0">
+      <section className="relative h-auto aspect-video md:h-[98vh] flex items-end justify-end overflow-hidden md:m-2 m-0 mt-[60px]">
         {/* Carousel Background */}
         <div className="absolute inset-0 w-full h-full">
           {heroImages.map((image, index) => (
@@ -157,21 +157,34 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Navigation Controls */}
+        {/* Navigation Controls - Hidden on mobile */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/20 hover:bg-background/40 backdrop-blur-sm text-white rounded-full transition-all"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/20 hover:bg-background/40 backdrop-blur-sm text-white rounded-full transition-all hidden md:block"
           aria-label="Previous slide"
         >
           <ChevronLeft size={32} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/20 hover:bg-background/40 backdrop-blur-sm text-white rounded-full transition-all"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-background/20 hover:bg-background/40 backdrop-blur-sm text-white rounded-full transition-all hidden md:block"
           aria-label="Next slide"
         >
           <ChevronRight size={32} />
         </button>
+
+        {/* Dot Indicators - Visible on mobile */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2 md:hidden">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? "bg-white w-4" : "bg-white/50"
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
 
         {/* Content Box */}
         {/* <div className="relative z-10 p-4 md:p-4 md:mr-10 mb-10 md:mb-10 max-w-xl">

@@ -69,7 +69,7 @@ export default function ContactPage() {
             <h3 className="text-xl font-bold text-foreground mb-2">Visit Us</h3>
             <p className="text-foreground/70 mb-4">Two convenient locations</p>
             <p className="text-foreground/80 font-medium">
-              Downhill, Malappuram<br />
+              Kizhakkethala, Malappuram<br />
               Downhill,Kottappadi
             </p>
           </div>
